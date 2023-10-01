@@ -1,0 +1,100 @@
+{
+  "users": [
+    {
+      "name": "akugbe ode",
+      "email": "akugbeode@yahoo.com",
+      "imageUrl": null,
+      "reference": "9c52ce3c-70e7-4857-bef9-c4c452b48ab8",
+      "password": "5d92562e96bc19b032e6d3ecb4704aa30c13fa3fbea6e69ab004a54334555d4a",
+      "accountType": "Form Create User",
+      "createdAt": 1694109048610,
+      "id": 1
+    },
+    {
+      "name": "john doe",
+      "email": "johndoe@gmail.com",
+      "imageUrl": null,
+      "reference": "f7478193-89ee-4916-b5b1-8a1c4cdeda65",
+      "password": "90ecc336d6200b1389eb49c4b557ee42892345c2f727453ae82c96e6de94098e",
+      "accountType": "Form Create User",
+      "createdAt": 1694832688515,
+      "id": 2
+    },
+    {
+      "name": "akugbe ode",
+      "email": "akugbeode@gmail.com",
+      "imageUrl": "https://lh3.googleusercontent.com/a/ACg8ocLEx6qGd44TdJ3km6PkFhJzdSDWc_cOeBfLdoCev2jPSENN=s96-c",
+      "reference": "105569026300738288559",
+      "password": "8a79a4732a20c5455049cbb1451170656aa4ed179e6b522c04d8ebda94715869",
+      "accountType": "Google OAuth",
+      "createdAt": 1695306127968,
+      "id": 3
+    }
+  ],
+  "projects": [
+    {
+      "title": "project one",
+      "slug": "project-one",
+      "description": "",
+      "reference": "15533418-4f7a-4966-8f66-933302c5243a",
+      "owner": "9c52ce3c-70e7-4857-bef9-c4c452b48ab8",
+      "publish": true,
+      "id": 1
+    }
+  ],
+  "pages": [
+    {
+      "project": "15533418-4f7a-4966-8f66-933302c5243a",
+      "reference": "562f739f-971e-4595-82b3-c48c58de5a75",
+      "name": "main",
+      "settings": {
+        "theme": {
+          "type": "Solid Color",
+          "name": "White Background",
+          "settings": {
+            "background": "#FFFFFF"
+          }
+        },
+        "usePattern": false,
+        "color": "#FFFFFF"
+      },
+      "id": 3
+    }
+  ],
+  "pageElements": [
+    {
+      "reference": "8fdd25fd-dedd-470f-b0e2-90528a787867",
+      "page": "41620a72-b52b-4546-9445-c400ed5b0026",
+      "type": "text",
+      "text": "Edit Text",
+      "settings": {
+        "font-size": 18,
+        "font-weight": 300,
+        "color": "#000000",
+        "font-family": "Mooli, sans-serif",
+        "x": 910,
+        "y": 472,
+        "width": 100,
+        "height": 50
+      },
+      "id": 4
+    },
+    {
+      "reference": "c247bc69-f4d5-4262-9924-0e66642bf30d",
+      "page": "562f739f-971e-4595-82b3-c48c58de5a75",
+      "type": "text",
+      "text": "Edit Text",
+      "settings": {
+        "font-size": 18,
+        "font-weight": 300,
+        "color": "#000000",
+        "font-family": "Mooli, sans-serif",
+        "x": 169,
+        "y": 174,
+        "width": 100,
+        "height": 50
+      },
+      "id": 5
+    }
+  ]
+}
