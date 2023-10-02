@@ -1,13 +1,13 @@
 const hostname = window.location.hostname;
 
 export const fetchProjects = async () => {
-    const response = await fetch(`https://json-server-gamma-rose.vercel.app/api/projects`);
+    const response = await fetch(`https://json-server-rbhf.onrender.com/projects`);
     const data = await response.json();
     return data;
 }
 
 export const fetchProject = async (id) => {
-    const res = await fetch(`https://json-server-gamma-rose.vercel.app/api/projects/${id}`)
+    const res = await fetch(`https://json-server-rbhf.onrender.com/projects/${id}`)
     const data = await res.json()
     return data
 }
@@ -26,7 +26,7 @@ export const fetchProjectByProps = async (property, value) => {
 }
 
 export const createProject = async (project) => {
-    const res = await fetch(`https://json-server-gamma-rose.vercel.app/api/projects`, {
+    const res = await fetch(`https://json-server-rbhf.onrender.com/projects`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

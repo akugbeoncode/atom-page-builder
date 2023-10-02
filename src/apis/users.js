@@ -1,13 +1,13 @@
 const hostname = window.location.hostname;
 
 export const fetchUsers = async () => {
-    const response = await fetch(`https://json-server-gamma-rose.vercel.app/api/users`);
+    const response = await fetch(`https://json-server-rbhf.onrender.com/users`);
     const data = await response.json();
     return data;
 }
 
 export const fetchUser = async (id) => {
-    const res = await fetch(`https://json-server-gamma-rose.vercel.app/api/users/${id}`)
+    const res = await fetch(`https://json-server-rbhf.onrender.com/users/${id}`)
     const data = await res.json()
     return data
 }
@@ -26,7 +26,7 @@ export const fetchUserByProps = async (property, value) => {
 }
 
 export const createUser = async (user) => {
-    const res = await fetch(`https://json-server-gamma-rose.vercel.app/api/users/users`, {
+    const res = await fetch(`https://json-server-rbhf.onrender.com/users`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

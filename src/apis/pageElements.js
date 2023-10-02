@@ -2,19 +2,19 @@ import { emptyObject } from "../helpers/utils";
 const hostname = window.location.hostname;
 
 export const fetchPageElements = async () => {
-    const res = await fetch(`https://json-server-gamma-rose.vercel.app/api/pageElements`)
+    const res = await fetch(`https://json-server-rbhf.onrender.com/pageElements`)
     const data = await res.json()
     return data
 }
 
 export const fetchPageElement = async (id) => {
-    const res = await fetch(`https://json-server-gamma-rose.vercel.app/api/pageElements/${id}`)
+    const res = await fetch(`https://json-server-rbhf.onrender.com/pageElements/${id}`)
     const data = await res.json()
     return data
 }
 
 export const createPageElement = async (pageElement) => {
-    const res = await fetch(`https://json-server-gamma-rose.vercel.app/api/pageElements`, {
+    const res = await fetch(`https://json-server-rbhf.onrender.com/pageElements`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
