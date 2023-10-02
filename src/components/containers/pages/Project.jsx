@@ -128,7 +128,7 @@ const Project = () => {
 
     const deletePageElement = async (pageElementId) => {
 
-        await fetch(`http://${hostname}:5000/pageElements/${pageElementId}`, {
+        await fetch(`https://json-server-rbhf.onrender.com/pageElements/${pageElementId}`, {
             method: "DELETE"
         })
 
@@ -137,7 +137,7 @@ const Project = () => {
 
     const pageUpdated = async (id, update,) => {
         try {
-            const res = await fetch(`http://${hostname}:5000/pages/${id}`, {
+            const res = await fetch(`https://json-server-rbhf.onrender.com/pages/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
@@ -155,7 +155,7 @@ const Project = () => {
 
     const updatePageElement = async (id, update, props) => {
         try {
-            const res = await fetch(`http://${hostname}:5000/pageElements/${id}`, {
+            const res = await fetch(`https://json-server-rbhf.onrender.com/pageElements/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"

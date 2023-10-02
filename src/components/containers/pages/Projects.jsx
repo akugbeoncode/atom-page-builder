@@ -20,7 +20,7 @@ const Projects = () => {
 	}
 
 	const deleteProject = async (id) => {
-		await fetch(`http://${hostname}:5000/projects/${id}`, {
+		await fetch(`https://json-server-rbhf.onrender.com/projects/${id}`, {
             method: "DELETE"
         })
 
@@ -28,7 +28,7 @@ const Projects = () => {
 	}
 
 	const updateProject = async (id, update) => {
-		const res = await fetch(`http://${hostname}:5000/projects/${id}`, {
+		const res = await fetch(`https://json-server-rbhf.onrender.com/projects/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
