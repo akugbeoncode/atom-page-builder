@@ -3,13 +3,13 @@ import { fetchActivePageElements } from './pageElements';
 const hostname = window.location.hostname;
 
 export const fetchPages = async () => {
-    const response = await fetch(`http://${hostname}:5000/pages`);
+    const response = await fetch(`https://json-server-gamma-rose.vercel.app/api/pages`);
     const data = await response.json();
     return data;
 }
 
 export const fetchPage = async (id) => {
-    const res = await fetch(`http://${hostname}:5000/pages/${id}`)
+    const res = await fetch(`https://json-server-gamma-rose.vercel.app/api/${id}`)
     const data = await res.json()
     return data
 }
@@ -28,7 +28,7 @@ export const fetchPageByProps = async (property, value) => {
 }
 
 export const createPage = async (page) => {
-    const res = await fetch(`http://${hostname}:5000/pages`, {
+    const res = await fetch(`https://json-server-gamma-rose.vercel.app/api/pages`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -89,12 +89,12 @@ export const deletePageAndAllUiElements = async (id, reference) => {
     const pageElements = await fetchActivePageElements(reference)
 
     pageElements.forEach(async (elem) => {
-        await fetch(`http://${hostname}:5000/pageElements/${elem.id}`, {
+        await fetch(`https://json-server-gamma-rose.vercel.app/api/pageElements/${elem.id}`, {
             method: "DELETE"
         })
     })
 
-    await fetch(`http://${hostname}:5000/pages/${id}`, {
+    await fetch(`https://json-server-gamma-rose.vercel.app/api/pages/${id}`, {
         method: "DELETE"
     })
 }

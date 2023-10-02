@@ -6,6 +6,7 @@ import { BsFillCheckCircleFill, BsXCircleFill } from "react-icons/bs";
 import Bars from 'react-loading-icons/dist/esm/components/bars';
 import { v4 as uuidv4 } from 'uuid';
 import { createPage } from '../../../apis/pages';
+import { createPageElement } from '../../../apis/pageElements';
 
 const CreateNewPageFromExistingPage = ({ setShowRenderModals, project, page, pageUiElements, updatePagesCallback }) => {
 
@@ -43,7 +44,11 @@ const CreateNewPageFromExistingPage = ({ setShowRenderModals, project, page, pag
         updatePagesCallback()
 
         pageUiElements.forEach(async (uiElement, index)=>{
-            console.log("pageUiElements " + index)
+            const newUiElement = uiElement;
+            newUiElement["reference"] = uuidv4();
+            newUiElement["page"] = pageObj["reference"];
+            delete newUiElement.id;
+            await createPageElement(newUiElement)
         })
 
         setLoading(false)

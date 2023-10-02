@@ -1,13 +1,13 @@
 const hostname = window.location.hostname;
 
 export const fetchProjects = async () => {
-    const response = await fetch(`http://${hostname}:5000/projects`);
+    const response = await fetch(`https://json-server-gamma-rose.vercel.app/api/projects`);
     const data = await response.json();
     return data;
 }
 
 export const fetchProject = async (id) => {
-    const res = await fetch(`http://${hostname}:5000/projects/${id}`)
+    const res = await fetch(`https://json-server-gamma-rose.vercel.app/api/projects/${id}`)
     const data = await res.json()
     return data
 }
@@ -26,7 +26,7 @@ export const fetchProjectByProps = async (property, value) => {
 }
 
 export const createProject = async (project) => {
-    const res = await fetch(`http://${hostname}:5000/projects`, {
+    const res = await fetch(`https://json-server-gamma-rose.vercel.app/api/projects`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
