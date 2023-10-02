@@ -158,7 +158,7 @@ const AuthWrapper = () => {
         }}>
             <>
                 { showPageHeader && <Header />}
-                { showAlertMessage.active && <Alert code={showAlertMessage.code} status={showAlertMessage.status} message={showAlertMessage.message} />}
+                {/* { showAlertMessage.active && <Alert code={showAlertMessage.code} status={showAlertMessage.status} message={showAlertMessage.message} />} */}
                 <RenderRoutes />
                 <div style={{ position: "fixed", bottom: '10px', left: "10px" }}>{windowDimensions.winWidth} x {windowDimensions.winHeight}</div>
             </>

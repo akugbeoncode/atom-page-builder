@@ -43,7 +43,7 @@ const Project = () => {
     const [sidebarObject, setSidebarObject] = useState(null);
     const [sidebarObjectTitle, setSidebarObjectTitle] = useState("");
     
-    const hostname = window.location.hostname;
+    let hostname = window.location.hostname;
 
     const closeAllPanels = () => {
 		setShowUploadImagePanel(false);
