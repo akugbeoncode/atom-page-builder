@@ -134,6 +134,8 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
         } else {
             document.querySelector(".text-element-rendered").focus()
         }
+
+        console.log("CLICKED!!!")
     }
 
     useEffect(() => {

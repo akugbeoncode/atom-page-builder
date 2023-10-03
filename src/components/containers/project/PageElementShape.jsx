@@ -114,6 +114,8 @@ const handleOnClickRequested = (e) => {
     } else {
         setThisIsActiveElement(false)
     }
+
+    console.log("CLICKED!!!")
 }
 
 useEffect(() => {
