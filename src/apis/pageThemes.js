@@ -2,6 +2,15 @@ import { capitalizeText } from "../helpers/utils";
 
 export const patterns = [
     {
+        id: 4,
+        name: "Cross Dots",
+        className: "themes-cross-dots",
+        parameters: {
+            "background": "radial-gradient(black 3px, transparent 4px), radial-gradient(black 3px, transparent 4px), linear-gradient(#fff 4px, transparent 0), linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px), linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px), #fff",
+            "background-size": "109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px",
+            "background-position": "54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px"
+        }
+    },{
         id: 1,
         name: "Carbon",
         className: "themes-carbon",
@@ -28,15 +37,6 @@ export const patterns = [
             "background-image": `radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px), radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px), radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px), radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px)`,
             "background-size": "550px 550px, 350px 350px, 250px 250px, 150px 150px",
             "background-position": "0 0, 40px 60px, 130px 270px, 70px 100px"
-        }
-    },{
-        id: 4,
-        name: "Cross Dots",
-        className: "themes-cross-dots",
-        parameters: {
-            "background": "radial-gradient(black 3px, transparent 4px), radial-gradient(black 3px, transparent 4px), linear-gradient(#fff 4px, transparent 0), linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px), linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px), #fff",
-            "background-size": "109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px",
-            "background-position": "54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px"
         }
     },{
         id: 5,
