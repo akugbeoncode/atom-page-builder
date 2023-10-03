@@ -28,7 +28,7 @@ const ProjectGridItem = ({ project, user, deleteProject, updateProject }) => {
               }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
-                    deleteProject(project.id)
+                    deleteProject(project.id, project.reference)
                 } 
               })
         }

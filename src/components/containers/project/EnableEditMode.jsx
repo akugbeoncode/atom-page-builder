@@ -13,6 +13,7 @@ const EnableEditMode = ({ setEdit, canEditProject }) => {
         } else {
             navigate("/", {replace: true})
         }
+        localStorage.removeItem("ACTIVE_PAGE")
     }
 
     const handleEnableEditRequest = () => {

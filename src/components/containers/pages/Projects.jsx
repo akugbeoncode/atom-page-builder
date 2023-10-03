@@ -5,6 +5,7 @@ import EmptyProjects from '../projects/EmptyProjects';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthData } from '../../auth/AuthWrapper';
 import { fetchLoggedUserProjects } from '../../../apis/projects';
+import { deletePageAndAllUiElements, fetchProjectPagesWithNoCreate } from '../../../apis/pages';
 
 const Projects = () => {
 	const { user, setProjectRef, isMobileScreenView } = AuthData();
@@ -21,10 +22,16 @@ const Projects = () => {
 		setProjects(projectsFromServer)
 	}
 
-	const deleteProject = async (id) => {
+	const deleteProject = async (id, projectRef) => {
 		await fetch(`${protocolType}://${hostname}/projects/${id}`, {
             method: "DELETE"
         })
+
+		const pagesFromServer = await fetchProjectPagesWithNoCreate(projectRef);
+
+		pagesFromServer.forEach(async (page)=>{
+			await deletePageAndAllUiElements(page.id, page.reference)
+		})
 
         setProjects(projects.filter((project) => project.id !== id))
 	}

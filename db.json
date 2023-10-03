@@ -88,6 +88,110 @@
         "color": "#FFFFFF"
       },
       "id": 3
+    },
+    {
+      "project": "fe43554d-58c5-4465-83cb-6993fe3aceb2",
+      "reference": "5e8af26e-5dd7-417a-8586-e49b0cf9e351",
+      "name": "main",
+      "settings": {
+        "theme": {
+          "type": "Pattern",
+          "name": "Sunset Nude",
+          "settings": {
+            "background": "linear-gradient(-22deg,  #f7d9b5 0%,#a98e83 100%)"
+          }
+        },
+        "usePattern": true,
+        "color": "#FFFFFF"
+      },
+      "id": 4
+    },
+    {
+      "project": "15533418-4f7a-4966-8f66-933302c5243a",
+      "reference": "fcd637e7-f85e-4594-9837-b0eb432f5ab5",
+      "name": "page-two",
+      "settings": {
+        "theme": {
+          "type": "Solid Color",
+          "name": "White Background",
+          "settings": {
+            "background": "#FFFFFF"
+          }
+        },
+        "usePattern": false,
+        "color": "#FFFFFF"
+      },
+      "id": 5
+    },
+    {
+      "project": "fe43554d-58c5-4465-83cb-6993fe3aceb2",
+      "reference": "18476ebe-42d7-422f-9878-107771c7696d",
+      "name": "the-game",
+      "settings": {
+        "theme": {
+          "type": "Pattern",
+          "name": "Carbon",
+          "settings": {
+            "background": "linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424)",
+            "backgroundColor": "#131313",
+            "backgroundSize": "20px 20px"
+          }
+        },
+        "usePattern": true,
+        "color": "#FFFFFF"
+      },
+      "id": 6
+    },
+    {
+      "project": "d505edc0-15be-4633-9872-5b17b80a89b8",
+      "reference": "afac44ee-0eca-4f08-b8eb-3181547611d0",
+      "name": "main",
+      "settings": {
+        "theme": {
+          "type": "Solid Color",
+          "name": "White Background",
+          "settings": {
+            "background": "#FFFFFF"
+          }
+        },
+        "usePattern": false,
+        "color": "#FFFFFF"
+      },
+      "id": 7
+    },
+    {
+      "project": "d505edc0-15be-4633-9872-5b17b80a89b8",
+      "reference": "f740ccc4-5aa4-4bc1-98ad-a54c544a8117",
+      "name": "girls",
+      "settings": {
+        "theme": {
+          "type": "Solid Color",
+          "name": "White Background",
+          "settings": {
+            "background": "#FFFFFF"
+          }
+        },
+        "usePattern": false,
+        "color": "#FFFFFF"
+      },
+      "id": 11
+    },
+    {
+      "project": "d505edc0-15be-4633-9872-5b17b80a89b8",
+      "reference": "9886d054-10ad-401c-b34e-aaee5bb84933",
+      "name": "boys",
+      "settings": {
+        "theme": {
+          "type": "Solid Color",
+          "name": "White Background",
+          "settings": {
+            "background": "#FFFFFF"
+          }
+        },
+        "usePattern": false,
+        "color": "#FFFFFF"
+      },
+      "id": 12
     }
   ],
   "pageElements": [

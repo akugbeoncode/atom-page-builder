@@ -47,8 +47,8 @@ const CreateNewPage = ({ setShowRenderModals, project, updatePagesCallback }) =>
             }
         }
 
-        await createPage(pageObj)
-        updatePagesCallback()
+        const page = await createPage(pageObj)
+        updatePagesCallback(page)
         setLoading(false)
         setShowRenderModals(false)
     }

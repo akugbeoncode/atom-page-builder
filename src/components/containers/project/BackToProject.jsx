@@ -24,6 +24,7 @@ const BackToProject = ({ setEdit, closeAllPanels, saveActivePageAndElementsSetti
           edit: false
       }
       localStorage.setItem("EDIT_STATUS", JSON.stringify(editObj))
+      localStorage.removeItem("ACTIVE_PAGE")
       setEdit(false)
       navigate("/my-projects", {replace: true})
     })

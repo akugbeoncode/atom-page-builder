@@ -111,8 +111,13 @@ const Project = () => {
         return user?.reference === project?.owner ? true : false;
     }
 
-    const updatePagesCallback = () => {
+    const updatePagesCallback = (pg=null) => {
         fetchCurrentProjectPages(project?.reference)
+        if (pg) {
+            const stringifyPage = JSON.stringify(pg);
+            localStorage.setItem("ACTIVE_PAGE", stringifyPage)
+            setActivePage(pg)
+        }
     }
 
     const updatePageElementsCallback = async () => {
@@ -125,17 +130,24 @@ const Project = () => {
             return null;
         }
 
+        let targetIndex = null; 
+
         if (activePage.id === pageId) {
-            pages.forEach(pg => {
-                if (pg.id !== pageId) {
-                    setActivePage(pg);
-                    return;
+            pages.map((pg,index) => {
+                if (pg.id === pageId) {
+                    targetIndex = index;
                 }
             })
         }
 
+        let pg = null;
+
+        if ((targetIndex >= 0) && (targetIndex < pages.length) ) {
+            pg = targetIndex === (pages.length-1) ? pages[(pages.length-1)] : pages[(targetIndex+1)]
+        } 
+
         await deletePageAndAllUiElements(pageId, pageRef)
-        updatePagesCallback()
+        updatePagesCallback(pg)
     }
 
     const deletePageElement = async (pageElementId) => {

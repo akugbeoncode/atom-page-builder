@@ -40,8 +40,7 @@ const CreateNewPageFromExistingPage = ({ setShowRenderModals, project, page, pag
 
         delete pageObj.id;
 
-        await createPage(pageObj)
-        updatePagesCallback()
+        const newPage = await createPage(pageObj)
 
         pageUiElements.forEach(async (uiElement, index)=>{
             const newUiElement = uiElement;
@@ -51,6 +50,7 @@ const CreateNewPageFromExistingPage = ({ setShowRenderModals, project, page, pag
             await createPageElement(newUiElement)
         })
 
+        updatePagesCallback(newPage)
         setLoading(false)
         setShowRenderModals(false)
     }
