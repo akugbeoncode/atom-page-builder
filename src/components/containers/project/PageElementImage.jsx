@@ -101,6 +101,7 @@ const  handleUIElementUpdateRequest = async (update, props) => {
 }
 
 const handleOnClickRequested = (e) => {
+    closeAllPanels()
     if (!edit) return null;
     setActivePageElement(element)
     setShowContextMenu(true)
@@ -141,7 +142,7 @@ useEffect(() => {
                       position: "relative", height: `100%`, width: `$100%`, cursor: "pointer"
                     }}
                     onClick={(e) => handleOnClickRequested(e)}
-                    // onMouseMove={onMouseMove}
+                    onMouseMove={onMouseMove}
                     onPointerEnter={(e) => handleOnClickRequested(e)}
                 >
                     <div 
@@ -176,17 +177,20 @@ useEffect(() => {
                                     <li 
                                         onMouseMove={onMouseMoveContextMenu}
                                         onClick={handleShowElementSettingsRequest}
+                                        onPointerEnter={handleShowElementSettingsRequest}
                                         title="Image Settings"
                                     ><BsFillGearFill onMouseMove={onMouseMoveContextMenu} /></li>
                                     <li 
                                         onMouseMove={onMouseMoveContextMenu}
                                         title="Delete Image"
                                         onClick={handleDeletePageElementRequest}
+                                        onPointerEnter={handleDeletePageElementRequest}
                                     ><BsFillTrash3Fill /></li>
                                     <li 
                                         onMouseMove={onMouseMoveContextMenu}
                                         title='Hide Context Meneu'
                                         onClick={()=>{setShowContextMenu(false); console.log("CLICKED!!!!!")}}
+                                        onPointerEnter={()=>{setShowContextMenu(false); console.log("CLICKED!!!!!")}}
                                     ><BsFillEyeSlashFill /></li>
                                 </ul>
                             </div>

@@ -102,6 +102,7 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
     }
 
     const handleOnBlurRequest = () => {
+        closeAllPanels()
         if (!edit) return null;
         setTextEditMode(false)
         const updatedUiElement = element;
@@ -115,6 +116,7 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
     }
 
     const handleOnClickRequested = (e) => {
+        closeAllPanels()
         if (!edit) return null;
         setActivePageElement(element)
         setShowContextMenu(true)
@@ -126,6 +128,7 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
     }
 
     const handleOnDoubleClickRequested = (e) => {
+        closeAllPanels()
         if (!edit) return null;
         setTextEditMode(true)
         setShowContextMenu(true)
@@ -166,8 +169,7 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
                     onClick={(e) => handleOnClickRequested(e)}
                     onDoubleClick={(e) => handleOnDoubleClickRequested(e)}
                     onPointerEnter={(e) => handleOnClickRequested(e)}
-                    // onMouseMove={onMouseMove}
-                    // onMouseUpCapture={(e) => handleOnClickRequested(e)}
+                    onMouseMove={onMouseMove}
                 >
                     <input
                         className={`text-element-rendered`}
@@ -200,21 +202,25 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
                                         onMouseMove={onMouseMoveContextMenu}
                                         title='Edit Text'
                                         onClick={handleOnDoubleClickRequested}
+                                        onPointerEnter={handleOnDoubleClickRequested}
                                     ><BsPencilSquare onMouseMove={onMouseMoveContextMenu} /> </li>
                                     <li 
                                         onMouseMove={onMouseMoveContextMenu}
                                         onClick={handleShowElementSettingsRequest}
+                                        onPointerEnter={handleShowElementSettingsRequest}
                                         title="Text Settings"
                                     ><BsFillGearFill onMouseMove={onMouseMoveContextMenu} /></li>
                                     <li 
                                         onMouseMove={onMouseMoveContextMenu}
                                         title="Delete Text"
                                         onClick={handleDeletePageElementRequest}
+                                        onPointerEnter={handleDeletePageElementRequest}
                                     ><BsFillTrash3Fill /></li>
                                     <li 
                                         onMouseMove={onMouseMoveContextMenu}
                                         title='Hide Context Meneu'
                                         onClick={()=>{setShowContextMenu(false); console.log("CLICKED!!!!!")}}
+                                        onPointerEnter={()=>{setShowContextMenu(false); console.log("CLICKED!!!!!")}}
                                     ><BsFillEyeSlashFill /></li>
                                 </ul>
                             </div>
