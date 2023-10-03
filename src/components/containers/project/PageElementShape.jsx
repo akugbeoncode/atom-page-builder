@@ -143,18 +143,19 @@ useEffect(() => {
                 <div 
                     className={`text-element-rendered-container ${(edit && thisIsActiveElement) ? "active focused" : "not-active" }`} 
                     style={{ 
-                      position: "relative", height: `100%`, width: `$100%`, 
+                      position: "relative", height: `100%`, width: `$100%`, cursor: "pointer"
                     }}
                     onClick={(e) => handleOnClickRequested(e)}
-                    onMouseMove={onMouseMove}
-                    onMouseUpCapture={(e) => handleOnClickRequested(e)}
+                    // onMouseMove={onMouseMove}
+                    // onMouseUpCapture={(e) => handleOnClickRequested(e)}
                 >
                     <div style={{ 
                       height: `100%`, width: `$100%`,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      overflow: "hidden"
+                      overflow: "hidden",
+                      cursor: "pointer"
                     }}>
                       <PageElementShapeSelector element={element}  />
                     </div>

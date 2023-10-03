@@ -162,11 +162,11 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
             >
                 <div 
                     className={`text-element-rendered-container ${textEditMode ? "focused" : "" } ${(edit && thisIsActiveElement) ? "active" : "not-active" }`} 
-                    style={{ position: "relative", height: `100%`, width: `$100%` }}
+                    style={{ position: "relative", height: `100%`, width: `$100%`, cursor: "pointer" }}
                     onClick={(e) => handleOnClickRequested(e)}
                     onDoubleClick={(e) => handleOnDoubleClickRequested(e)}
-                    onMouseMove={onMouseMove}
-                    onMouseUpCapture={(e) => handleOnClickRequested(e)}
+                    // onMouseMove={onMouseMove}
+                    // onMouseUpCapture={(e) => handleOnClickRequested(e)}
                 >
                     <input
                         className={`text-element-rendered`}
@@ -181,7 +181,8 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
                             fontSize: `${element.settings["font-size"]}px`,
                             fontFamily: `${element.settings["font-family"]}`,
                             color: `${element.settings["color"]}`,
-                            fontWeight: `${element.settings["font-weight"]}`
+                            fontWeight: `${element.settings["font-weight"]}`,
+                            cursor: "pointer"
                         }}
                     />
 
