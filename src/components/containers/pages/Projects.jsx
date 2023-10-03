@@ -10,8 +10,10 @@ const Projects = () => {
 	const { user, setProjectRef, isMobileScreenView } = AuthData();
 	const [projects, setProjects] = useState([]);
 	const navigate = useNavigate();
-	const hostname = window.location.hostname;
 	const { projectRef } = useParams();
+
+	const hostname = process.env.REACT_APP_ENV === "development" ? "localhost:5000" : "json-server-rbhf.onrender.com";
+	const protocolType = process.env.REACT_APP_ENV === "development" ? "http" : "https";
 
 	const getLoggedUserProjects = async () => {
 		const userReference = user?.reference;
@@ -20,7 +22,7 @@ const Projects = () => {
 	}
 
 	const deleteProject = async (id) => {
-		await fetch(`https://json-server-rbhf.onrender.com/projects/${id}`, {
+		await fetch(`${protocolType}://${hostname}/projects/${id}`, {
             method: "DELETE"
         })
 
@@ -28,7 +30,7 @@ const Projects = () => {
 	}
 
 	const updateProject = async (id, update) => {
-		const res = await fetch(`https://json-server-rbhf.onrender.com/projects/${id}`, {
+		const res = await fetch(`${protocolType}://${hostname}/projects/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"

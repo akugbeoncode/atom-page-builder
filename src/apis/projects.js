@@ -1,13 +1,14 @@
-const hostname = window.location.hostname;
+const hostname = process.env.REACT_APP_ENV === "development" ? "localhost:5000" : "json-server-rbhf.onrender.com";
+const protocolType = process.env.REACT_APP_ENV === "development" ? "http" : "https";
 
 export const fetchProjects = async () => {
-    const response = await fetch(`https://json-server-rbhf.onrender.com/projects`);
+    const response = await fetch(`${protocolType}://${hostname}/projects`);
     const data = await response.json();
     return data;
 }
 
 export const fetchProject = async (id) => {
-    const res = await fetch(`https://json-server-rbhf.onrender.com/projects/${id}`)
+    const res = await fetch(`${protocolType}://${hostname}/projects/${id}`)
     const data = await res.json()
     return data
 }
@@ -26,7 +27,7 @@ export const fetchProjectByProps = async (property, value) => {
 }
 
 export const createProject = async (project) => {
-    const res = await fetch(`https://json-server-rbhf.onrender.com/projects`, {
+    const res = await fetch(`${protocolType}://${hostname}/projects`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

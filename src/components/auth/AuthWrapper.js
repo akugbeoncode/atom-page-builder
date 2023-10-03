@@ -152,6 +152,10 @@ const AuthWrapper = () => {
         }
     }, [windowDimensions])
 
+    useEffect(()=>{
+        console.log("mobile screen view ==>>>  ", isMobileScreenView)
+    }, [isMobileScreenView])
+
     return (
         <AuthContext.Provider value={{ 
             user, isAuthenticated, registerUser, login, responseFromGoogleHandled, logout, showPageHeader, setShowPageHeader, setShowAlertMessage, authenticateUser, projectRef, setProjectRef, isModalActive, setIsModalActive, isMobileScreenView, windowDimensions, mobileGuideWidth, toggleScreenViewBetweenMobileAndWebView

@@ -1,15 +1,16 @@
 import { v4 as uuidv4 } from 'uuid';
 import { fetchActivePageElements } from './pageElements';
-const hostname = window.location.hostname;
+const hostname = process.env.REACT_APP_ENV === "development" ? "localhost:5000" : "json-server-rbhf.onrender.com";
+const protocolType = process.env.REACT_APP_ENV === "development" ? "http" : "https";
 
 export const fetchPages = async () => {
-    const response = await fetch(`https://json-server-rbhf.onrender.com/pages`);
+    const response = await fetch(`${protocolType}://${hostname}/pages`);
     const data = await response.json();
     return data;
 }
 
 export const fetchPage = async (id) => {
-    const res = await fetch(`https://json-server-rbhf.onrender.com/pages/${id}`)
+    const res = await fetch(`${protocolType}://${hostname}/pages/${id}`)
     const data = await res.json()
     return data
 }
@@ -28,7 +29,7 @@ export const fetchPageByProps = async (property, value) => {
 }
 
 export const createPage = async (page) => {
-    const res = await fetch(`https://json-server-rbhf.onrender.com/pages`, {
+    const res = await fetch(`${protocolType}://${hostname}/pages`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -89,12 +90,12 @@ export const deletePageAndAllUiElements = async (id, reference) => {
     const pageElements = await fetchActivePageElements(reference)
 
     pageElements.forEach(async (elem) => {
-        await fetch(`https://json-server-rbhf.onrender.com/pageElements/${elem.id}`, {
+        await fetch(`${protocolType}://${hostname}/pageElements/${elem.id}`, {
             method: "DELETE"
         })
     })
 
-    await fetch(`https://json-server-rbhf.onrender.com/pages/${id}`, {
+    await fetch(`${protocolType}://${hostname}/pages/${id}`, {
         method: "DELETE"
     })
 }

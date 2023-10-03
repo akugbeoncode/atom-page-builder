@@ -7,12 +7,25 @@ import Swal from 'sweetalert2'
 const UploadImagePanelContainer = ({ showUploadImagePanel, setShowUploadImagePanel, closeAllPanels}) => {
 
 	const [imgUrl, setImgUrl] = useState(null);
-  	const [file, setFile] = useState(null);
-	const [loading, setLoading] = useState(false)
-	const hostname = window.location.hostname;
+	const [loading, setLoading] = useState(false);
 	
 
 	const doNothing = () => {}
+
+	// const convertBase64 = (file) => {
+	// 	return new Promise ((resolve, reject) => {
+	// 		const fileReader = new FileReader();
+	// 		fileReader.readAsDataURL(file);
+
+	// 		fileReader.onload = () => {
+	// 			resolve(fileReader.result);
+	// 		};
+
+	// 		fileReader.onerror = (error) => {
+	// 			reject(error);
+	// 		};
+	// 	});
+	// }
 
 	const handleImageUploadRequest = () => {
 		document.getElementById("file-upload").click()
@@ -46,7 +59,7 @@ const UploadImagePanelContainer = ({ showUploadImagePanel, setShowUploadImagePan
 			body: formData
 		}
 
-		const response = await fetch(`http://${hostname}:8000/image-upload-services`, options);
+		const response = await fetch(`http://localhost:8000/image-upload-services`, options);
     	const data = await response.json();
 
 		console.log(data.data.imgUrl)

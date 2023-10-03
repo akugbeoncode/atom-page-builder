@@ -1,7 +1,7 @@
 const PORT = 8000;
 const express = require("express");
 const cors = require("cors");
-const uploadImage = require('./uploadImage.js')
+// const uploadImage = require('./uploadImage.js')
 
 require('dotenv').config({path:'./.env'})
 
@@ -16,9 +16,10 @@ app.use((req, res, next) => {
 });
 
 app.post("/image-upload-services", (req, res)=>{
-    uploadImage(req.body.image)
-        .then((url)=>res.send(url))
-        .catch((err) => res.status(500).send(err))
+    // uploadImage(req.body.image)
+    //     .then((url)=>res.send(url))
+    //     .catch((err) => res.status(500).send(err))
+    res.send("Hello World...")
 })
 
 app.listen(PORT, ()=>console.log(`Server is running on port ${PORT}`));

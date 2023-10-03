@@ -1,20 +1,21 @@
 import { emptyObject } from "../helpers/utils";
-const hostname = window.location.hostname;
+const hostname = process.env.REACT_APP_ENV === "development" ? "localhost:5000" : "json-server-rbhf.onrender.com";
+const protocolType = process.env.REACT_APP_ENV === "development" ? "http" : "https";
 
 export const fetchPageElements = async () => {
-    const res = await fetch(`https://json-server-rbhf.onrender.com/pageElements`)
+    const res = await fetch(`${protocolType}://${hostname}/pageElements`)
     const data = await res.json()
     return data
 }
 
 export const fetchPageElement = async (id) => {
-    const res = await fetch(`https://json-server-rbhf.onrender.com/pageElements/${id}`)
+    const res = await fetch(`${protocolType}://${hostname}/pageElements/${id}`)
     const data = await res.json()
     return data
 }
 
 export const createPageElement = async (pageElement) => {
-    const res = await fetch(`https://json-server-rbhf.onrender.com/pageElements`, {
+    const res = await fetch(`${protocolType}://${hostname}/pageElements`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

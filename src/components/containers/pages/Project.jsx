@@ -43,7 +43,8 @@ const Project = () => {
     const [sidebarObject, setSidebarObject] = useState(null);
     const [sidebarObjectTitle, setSidebarObjectTitle] = useState("");
     
-    let hostname = window.location.hostname;
+    const hostname = process.env.REACT_APP_ENV === "development" ? "localhost:5000" : "json-server-rbhf.onrender.com";
+    const protocolType = process.env.REACT_APP_ENV === "development" ? "http" : "https";
 
     const closeAllPanels = () => {
 		setShowUploadImagePanel(false);
@@ -128,7 +129,7 @@ const Project = () => {
 
     const deletePageElement = async (pageElementId) => {
 
-        await fetch(`https://json-server-rbhf.onrender.com/pageElements/${pageElementId}`, {
+        await fetch(`${protocolType}://${hostname}/pageElements/${pageElementId}`, {
             method: "DELETE"
         })
 
@@ -137,7 +138,7 @@ const Project = () => {
 
     const pageUpdated = async (id, update,) => {
         try {
-            const res = await fetch(`https://json-server-rbhf.onrender.com/pages/${id}`, {
+            const res = await fetch(`${protocolType}://${hostname}/pages/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
@@ -155,7 +156,7 @@ const Project = () => {
 
     const updatePageElement = async (id, update, props) => {
         try {
-            const res = await fetch(`https://json-server-rbhf.onrender.com/pageElements/${id}`, {
+            const res = await fetch(`${protocolType}://${hostname}/pageElements/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
@@ -209,6 +210,10 @@ const Project = () => {
         fetchActivePageUiElements(activePage?.reference) 
         saveActivePageAndElementsSettings()
     }, [activePage])
+
+    useEffect(()=>{
+        console.log("from project designer -- mobile screen view ==>>>  ", isMobileScreenView)
+    }, [isMobileScreenView])
 
     return (
         <div className="container-fluid" style={{ width: "100%", height: "1000px", minHeight: `1000px` }} id="main-page-container">

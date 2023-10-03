@@ -3,17 +3,14 @@ import placeholderImage from '../../../assets/app_images/placeholder.png'
 import Bars from 'react-loading-icons/dist/esm/components/bars';
 import { BsUpload } from "react-icons/bs";
 import Swal from 'sweetalert2';
-// import {Cloudinary} from "@cloudinary/url-gen";
 import { v4 as uuidv4 } from 'uuid';
 import { getUiElementDefaultSettings } from '../../../apis/defaults';
 import { createPageElement } from '../../../apis/pageElements';
 
-const UploadImagePanelContainer = ({ showUploadImagePanel, setShowUploadImagePanel, closeAllPanels, page, updatePageElementsCallback}) => {
+const UploadImagePanelContainer = ({ closeAllPanels, page, updatePageElementsCallback}) => {
 
 	const [imgUrl, setImgUrl] = useState(null);
-	const [loading, setLoading] = useState(false)
-	const hostname = window.location.hostname;
-	// const cld = new Cloudinary({cloud: {cloudName: 'akrosoft'}});
+	const [loading, setLoading] = useState(false);
 	
 
 	const doNothing = () => {}
@@ -21,21 +18,6 @@ const UploadImagePanelContainer = ({ showUploadImagePanel, setShowUploadImagePan
 	const handleImageUploadRequest = () => {
 		document.getElementById("file-upload").click()
 	}
-
-	// const convertBase64 = (file) => {
-	// 	return new Promise ((resolve, reject) => {
-	// 		const fileReader = new FileReader();
-	// 		fileReader.readAsDataURL(file);
-
-	// 		fileReader.onload = () => {
-	// 			resolve(fileReader.result);
-	// 		};
-
-	// 		fileReader.onerror = (error) => {
-	// 			reject(error);
-	// 		};
-	// 	});
-	// }
 
 	const uploadImage = async (e) => {
 		const files = e.target.files;

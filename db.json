@@ -49,13 +49,15 @@
       "name": "main",
       "settings": {
         "theme": {
-          "type": "Solid Color",
-          "name": "White Background",
+          "type": "Pattern",
+          "name": "Carbon",
           "settings": {
-            "background": "#FFFFFF"
+            "background": "linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424)",
+            "backgroundColor": "#131313",
+            "backgroundSize": "20px 20px"
           }
         },
-        "usePattern": false,
+        "usePattern": true,
         "color": "#FFFFFF"
       },
       "id": 3
@@ -89,8 +91,8 @@
         "font-weight": 300,
         "color": "#000000",
         "font-family": "Mooli, sans-serif",
-        "x": 169,
-        "y": 174,
+        "x": 146,
+        "y": 220,
         "width": 100,
         "height": 50
       },

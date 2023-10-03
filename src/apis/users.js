@@ -1,13 +1,14 @@
-const hostname = window.location.hostname;
+const hostname = process.env.REACT_APP_ENV === "development" ? "localhost:5000" : "json-server-rbhf.onrender.com";
+const protocolType = process.env.REACT_APP_ENV === "development" ? "http" : "https";
 
 export const fetchUsers = async () => {
-    const response = await fetch(`https://json-server-rbhf.onrender.com/users`);
+    const response = await fetch(`${protocolType}://${hostname}/users`);
     const data = await response.json();
     return data;
 }
 
 export const fetchUser = async (id) => {
-    const res = await fetch(`https://json-server-rbhf.onrender.com/users/${id}`)
+    const res = await fetch(`${protocolType}://${hostname}/users/${id}`)
     const data = await res.json()
     return data
 }
@@ -26,7 +27,7 @@ export const fetchUserByProps = async (property, value) => {
 }
 
 export const createUser = async (user) => {
-    const res = await fetch(`https://json-server-rbhf.onrender.com/users`, {
+    const res = await fetch(`${protocolType}://${hostname}/users`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
