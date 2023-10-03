@@ -937,14 +937,14 @@ body {
 
   .select-dropdown .select-dropdown-content {
     width: 100%;
-    left: 0%;
+    left: -65%;
 
     z-index: 4096;
   }
 
   .select-dropdown .page-settings-mobile-panel {
     width: 100%;
-    left: -200%;
+    left: -290%;
 
     z-index: 4096;
   }
