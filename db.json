@@ -144,23 +144,6 @@
     },
     {
       "project": "d505edc0-15be-4633-9872-5b17b80a89b8",
-      "reference": "afac44ee-0eca-4f08-b8eb-3181547611d0",
-      "name": "main",
-      "settings": {
-        "theme": {
-          "type": "Solid Color",
-          "name": "White Background",
-          "settings": {
-            "background": "#FFFFFF"
-          }
-        },
-        "usePattern": false,
-        "color": "#FFFFFF"
-      },
-      "id": 7
-    },
-    {
-      "project": "d505edc0-15be-4633-9872-5b17b80a89b8",
       "reference": "f740ccc4-5aa4-4bc1-98ad-a54c544a8117",
       "name": "girls",
       "settings": {
@@ -178,8 +161,8 @@
     },
     {
       "project": "d505edc0-15be-4633-9872-5b17b80a89b8",
-      "reference": "9886d054-10ad-401c-b34e-aaee5bb84933",
-      "name": "boys",
+      "reference": "68dba6c8-96e9-4b06-996a-d4719047331c",
+      "name": "new-page",
       "settings": {
         "theme": {
           "type": "Solid Color",
