@@ -4,7 +4,7 @@ import { AuthData } from '../../auth/AuthWrapper';
 import { BsPencilSquare, BsFillGearFill, BsFillTrash3Fill, BsFillEyeSlashFill } from "react-icons/bs";
 
 const PageElementText = ({ element, edit, activePageElement, setActivePageElement, deletePageElement, updatePageElement, setShowSidebarPanel, setSidebarObject, setSidebarObjectTitle, closeAllPanels }) => {
-    const { windowDimensions } = AuthData();
+    const { windowDimensions, isMobileScreenView } = AuthData();
     
     const [deltaPosition, setDeltaPosition] = useState({x: element.settings.x, y: element.settings.y});
     const [size, setSize] = useState({width: element.settings.width, height: element.settings.height});
@@ -49,28 +49,32 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
 
     const onMouseMove = (e) => {
         if (edit) {
-            const delta = 5;
-            const rect = e.target.getBoundingClientRect();
-            let x = e.clientX - rect.left,
-                y = e.clientY - rect.top,
-                w = rect.right - rect.left,
-                h = rect.bottom - rect.top;
-
-            let c = "";
-            if(y < delta) c += "n";
-            else if( y > (h-delta)) c += "s";
-
-            if(x < delta) c += "w";
-            else if(x > (w - delta)) c += "e";
-
-            if (c) {
-                const resizeMouseActionLabel =  c + "-resize";
-                e.target.style.cursor = resizeMouseActionLabel;
+            if (isMobileScreenView) {
+                e.target.style.cursor = "pointer";
             } else {
-                const moveMouseActionLabel =  "move";
-                e.target.style.cursor = moveMouseActionLabel;
+                const delta = 5;
+                const rect = e.target.getBoundingClientRect();
+                let x = e.clientX - rect.left,
+                    y = e.clientY - rect.top,
+                    w = rect.right - rect.left,
+                    h = rect.bottom - rect.top;
+    
+                let c = "";
+                if(y < delta) c += "n";
+                else if( y > (h-delta)) c += "s";
+    
+                if(x < delta) c += "w";
+                else if(x > (w - delta)) c += "e";
+    
+                if (c) {
+                    const resizeMouseActionLabel =  c + "-resize";
+                    e.target.style.cursor = resizeMouseActionLabel;
+                } else {
+                    const moveMouseActionLabel =  "move";
+                    e.target.style.cursor = moveMouseActionLabel;
+                }
             }
-            // handleOnClickRequested(e)
+            handleOnClickRequested(e)
         } 
     }
 
