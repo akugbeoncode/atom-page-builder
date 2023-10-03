@@ -39,7 +39,8 @@ body {
 .center-justified-layout {
   height: 80vh;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .auth-container {
@@ -47,7 +48,7 @@ body {
   width: 100%;
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
