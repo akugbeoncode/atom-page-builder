@@ -22,7 +22,7 @@ const PublishedProjects = () => {
 
 	return (
 		<div style={{ width: "100%", height: "100%", overflowX: "hidden", overflowY: "scroll", paddingBottom: "200px" }}>
-			<div className="container-fluid px-5 py-5">
+			<div className="container-fluid px-3 py-3">
 				{
 					projects.length > 0 ?
 					<ProjectsGrids projects={projects} user={null} deleteProject={null} updateProject={null} /> :
