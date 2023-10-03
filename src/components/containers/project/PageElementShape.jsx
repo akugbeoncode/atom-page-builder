@@ -148,8 +148,11 @@ useEffect(() => {
                     onClick={(e) => handleOnClickRequested(e)}
                     // onMouseMove={onMouseMove}
                     // onMouseUpCapture={(e) => handleOnClickRequested(e)}
+                    onPointerEnter={(e) => handleOnClickRequested(e)}
                 >
-                    <div style={{ 
+                    <div 
+                        onPointerEnter={(e) => handleOnClickRequested(e)}
+                        style={{ 
                       height: `100%`, width: `$100%`,
                       display: "flex",
                       alignItems: "center",

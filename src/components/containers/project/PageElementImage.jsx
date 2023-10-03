@@ -141,10 +141,12 @@ useEffect(() => {
                       position: "relative", height: `100%`, width: `$100%`, cursor: "pointer"
                     }}
                     onClick={(e) => handleOnClickRequested(e)}
-                    onMouseMove={onMouseMove}
-                    onMouseUpCapture={(e) => handleOnClickRequested(e)}
+                    // onMouseMove={onMouseMove}
+                    onPointerEnter={(e) => handleOnClickRequested(e)}
                 >
-                    <div style={{ 
+                    <div 
+                        onPointerEnter={(e) => handleOnClickRequested(e)}
+                        style={{ 
                       height: `100%`, width: `$100%`,
                       border: `${element.settings["border"]}`,
                       borderRadius: `${element.settings["border-radius"]}`,

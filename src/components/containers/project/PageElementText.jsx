@@ -165,12 +165,14 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
                     style={{ position: "relative", height: `100%`, width: `$100%`, cursor: "pointer" }}
                     onClick={(e) => handleOnClickRequested(e)}
                     onDoubleClick={(e) => handleOnDoubleClickRequested(e)}
+                    onPointerEnter={(e) => handleOnClickRequested(e)}
                     // onMouseMove={onMouseMove}
                     // onMouseUpCapture={(e) => handleOnClickRequested(e)}
                 >
                     <input
                         className={`text-element-rendered`}
                         type='text' 
+                        onPointerEnter={(e) => handleOnClickRequested(e)}
                         onClick={(e) => handleOnClickRequested(e)}
                         onDoubleClick={(e) => handleOnDoubleClickRequested(e)}
                         onBlur={(e) => handleOnBlurRequest()}
