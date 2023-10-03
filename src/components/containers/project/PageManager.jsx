@@ -11,7 +11,10 @@ const PageManager = ({pages, activePage, setActivePage,  updatePageElementsCallb
     const [open, setOpen] = useState(false);
 
     useEffect(()=>{
-        isMobileScreenView ? setOpen(false) : setOpen(false)
+        setOpen(false)
+        if (!isMobileScreenView) {
+            setOpen(true)
+        }
     }, [isMobileScreenView])
     
     return (
@@ -20,7 +23,7 @@ const PageManager = ({pages, activePage, setActivePage,  updatePageElementsCallb
                 {
                     isMobileScreenView &&
                     <div>
-                        <button className={`mobile-menu-btn ${open ? "open" : "close"}`} onClick={()=>setOpen(!open)} title={open ? "Minimize" : "Expand"}>
+                        <button className={`mobile-menu-btn ${open ? "open" : "close"}`} onClick={() => {!isMobileScreenView ? setOpen(true) : setOpen(!open) }} title={open ? "Minimize" : "Expand"}>
                             {
                                 open ? <FaX fontSize={20} /> : <FaBars fontSize={20} />
                             }
