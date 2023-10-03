@@ -145,6 +145,7 @@ useEffect(() => {
                     }}
                     onClick={(e) => handleOnClickRequested(e)}
                     onMouseMove={onMouseMove}
+                    onMouseUpCapture={(e) => handleOnClickRequested(e)}
                 >
                     <div style={{ 
                       height: `100%`, width: `$100%`,

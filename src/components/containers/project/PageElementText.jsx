@@ -164,6 +164,7 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
                     onClick={(e) => handleOnClickRequested(e)}
                     onDoubleClick={(e) => handleOnDoubleClickRequested(e)}
                     onMouseMove={onMouseMove}
+                    onMouseUpCapture={(e) => handleOnClickRequested(e)}
                 >
                     <input
                         className={`text-element-rendered`}
