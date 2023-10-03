@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { AuthData } from '../../auth/AuthWrapper';
 import Sidebar from '../project/Sidebar';
 import PageManager from '../project/PageManager';
@@ -20,7 +20,10 @@ const Project = () => {
     const mainContentPageHolder = document.querySelector("#main-page-container");
     const editStatus = localStorage.getItem("EDIT_STATUS") ? JSON.parse(localStorage.getItem("EDIT_STATUS")) : null;
     const { projectRef } = useParams();
+    const navigate = useNavigate();
+
     const { setProjectRef, user, mobileGuideWidth, isMobileScreenView } = AuthData();
+    
     const [edit, setEdit] = useState(validEditStatus(editStatus, user) ? editStatus.edit : false);
     const [project, setProject] = useState(null);
     const [pages, setPages] = useState([]);
@@ -73,6 +76,14 @@ const Project = () => {
 
     const fetchCurrentProject = async (slug) => {
         const projectFromServer = await fetchProjectByProps("slug", slug);
+
+        if (!projectFromServer) {
+            if (!user) {
+                navigate("/", {replace: true})
+            } else {
+                navigate("/my-projects", {replace: true})
+            }
+        }
         setProject(projectFromServer);
     }
 
