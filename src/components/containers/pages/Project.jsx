@@ -216,7 +216,7 @@ const Project = () => {
     }, [isMobileScreenView])
 
     return (
-        <div className="container-fluid" style={{ width: "100%", height: "1000px", minHeight: `1000px` }} id="main-page-container">
+        <div className="container-fluid" style={{ width: "100%", height: "1000px", minHeight: `1000px`, }} id="main-page-container">
 			<div style={activePage ? {...activePage.settings.theme.settings, ...{ width: "100%", height: "100%" }} : { width: "100%", height: "100%" }}>
                 <div id="application-page-renderer" onClick={handleEmptyClickRequest} className={`main-application-layout`} style={{ position: "relative", width: "1920px", height: "100%", backgroundColor: "transparent" }}>
                     {

@@ -21,13 +21,15 @@ const PublishedProjects = () => {
 	}, [])
 
 	return (
-		<div className="container-fluid px-5 py-5">
-			{
-				projects.length > 0 ?
-				<ProjectsGrids projects={projects} user={null} deleteProject={null} updateProject={null} /> :
-				<EmptyProjects message={"No project record found!"} />
-			}
-		</div>	
+		<div style={{ width: "100%", height: "100%", overflowX: "hidden", overflowY: "scroll", paddingBottom: "200px" }}>
+			<div className="container-fluid px-5 py-5">
+				{
+					projects.length > 0 ?
+					<ProjectsGrids projects={projects} user={null} deleteProject={null} updateProject={null} /> :
+					<EmptyProjects message={"No project record found!"} />
+				}
+			</div>	
+		</div>
 	)
 }
 

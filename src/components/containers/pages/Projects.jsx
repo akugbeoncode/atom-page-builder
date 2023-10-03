@@ -51,28 +51,30 @@ const Projects = () => {
 	}, [])
 
 	return (
-		<div className={`container-fluid ${isMobileScreenView ? "px-1" : "px-3"}  py-3`}>
-			<div className='row pb-1 border-bottom'>
-				<div className='col-6 d-flex justify-content-start align-items-center'><h3 className='h3'>My Projects</h3></div>
-				<div className='col-6 d-flex justify-content-end align-items-center pb-2'>
-					<button 
-						className='btn btn-primary fw-bold '
-						onClick={(e)=>{
-							e.stopPropagation()
-							navigate('/create-project', {replace: true})
-						}}
-					>
-					<IoMdAdd fontSize={isMobileScreenView ? 25 : 20} /> {isMobileScreenView ? "" : 'NEW PROJECT'}
-				</button>
+		<div style={{ width: "100%", height: "100%", overflowX: "hidden", overflowY: "scroll", paddingBottom: "200px" }}>
+			<div className={`container-fluid ${isMobileScreenView ? "px-1" : "px-3"}  py-3`}>
+				<div className='row pb-1 border-bottom'>
+					<div className='col-6 d-flex justify-content-start align-items-center'><h3 className='h3'>My Projects</h3></div>
+					<div className='col-6 d-flex justify-content-end align-items-center pb-2'>
+						<button 
+							className='btn btn-primary fw-bold '
+							onClick={(e)=>{
+								e.stopPropagation()
+								navigate('/create-project', {replace: true})
+							}}
+						>
+						<IoMdAdd fontSize={isMobileScreenView ? 25 : 20} /> {isMobileScreenView ? "" : 'NEW PROJECT'}
+					</button>
+					</div>
 				</div>
-			</div>
-			<div className='row'>
-				<div className='col-12'>
-					{
-						projects.length > 0 ?
-						<ProjectsGrids projects={projects} user={user} deleteProject={deleteProject} updateProject={updateProject} /> :
-						<EmptyProjects message={"You have NOT created any project yet!"} />
-					}
+				<div className='row'>
+					<div className='col-12'>
+						{
+							projects.length > 0 ?
+							<ProjectsGrids projects={projects} user={user} deleteProject={deleteProject} updateProject={updateProject} /> :
+							<EmptyProjects message={"You have NOT created any project yet!"} />
+						}
+					</div>
 				</div>
 			</div>
 		</div>	
