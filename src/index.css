@@ -918,7 +918,7 @@ body {
   .sidebar-panel-controls-container {
     position: absolute;
     top: 10px;
-    left: 10px;
+    right: 10px;
 
     display: flex;
     align-items: center;
