@@ -41,7 +41,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
-  margin-bottom: 200px;
+  
 }
 
 .auth-container {
@@ -51,6 +51,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  margin-bottom: 400px;
 }
 
 .no-link-underline {
