@@ -31,7 +31,53 @@
       "id": 3
     }
   ],
-  "projects": [],
-  "pages": [],
-  "pageElements": []
+  "projects": [
+    {
+      "title": "dataa",
+      "slug": "dataa",
+      "description": "",
+      "reference": "2ecf930a-1535-4c90-8eb9-76a032441aab",
+      "owner": "9c52ce3c-70e7-4857-bef9-c4c452b48ab8",
+      "publish": false,
+      "id": 1
+    }
+  ],
+  "pages": [
+    {
+      "project": "2ecf930a-1535-4c90-8eb9-76a032441aab",
+      "reference": "2b1329e4-3fe5-476a-9992-161538abd69f",
+      "name": "main",
+      "settings": {
+        "theme": {
+          "type": "Solid Color",
+          "name": "White Background",
+          "settings": {
+            "background": "#FFFFFF"
+          }
+        },
+        "usePattern": false,
+        "color": "#FFFFFF"
+      },
+      "id": 1
+    }
+  ],
+  "pageElements": [
+    {
+      "reference": "1ba250e0-4746-4eee-aee9-50cfc2bfeb4c",
+      "page": "0f7e08aa-39b3-4dcb-9d30-4d7248ffd8c1",
+      "type": "text",
+      "text": "Edit Text",
+      "settings": {
+        "font-size": 18,
+        "font-weight": 300,
+        "color": "#000000",
+        "font-family": "Mooli, sans-serif",
+        "x": 660,
+        "y": 472,
+        "width": 100,
+        "height": 50
+      },
+      "id": 1
+    }
+  ]
 }

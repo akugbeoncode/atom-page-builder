@@ -101,7 +101,7 @@ const  handleUIElementUpdateRequest = async (update, props) => {
 }
 
 const handleOnClickRequested = (e) => {
-    closeAllPanels()
+    // closeAllPanels()
     if (!edit) return null;
     setActivePageElement(element)
     setShowContextMenu(true)
@@ -177,14 +177,14 @@ useEffect(() => {
                                     <li 
                                         onMouseMove={onMouseMoveContextMenu}
                                         onClick={handleShowElementSettingsRequest}
-                                        onPointerEnter={handleShowElementSettingsRequest}
+                                        onPointerEnter={isMobileScreenView ? handleShowElementSettingsRequest : ()=>false }
                                         title="Image Settings"
                                     ><BsFillGearFill onMouseMove={onMouseMoveContextMenu} /></li>
                                     <li 
                                         onMouseMove={onMouseMoveContextMenu}
                                         title="Delete Image"
                                         onClick={handleDeletePageElementRequest}
-                                        onPointerEnter={handleDeletePageElementRequest}
+                                        onPointerEnter={isMobileScreenView ? handleDeletePageElementRequest : ()=>false }
                                     ><BsFillTrash3Fill /></li>
                                     <li 
                                         onMouseMove={onMouseMoveContextMenu}

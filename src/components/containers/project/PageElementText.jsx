@@ -116,7 +116,7 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
     }
 
     const handleOnClickRequested = (e) => {
-        closeAllPanels()
+        // closeAllPanels()
         if (!edit) return null;
         setActivePageElement(element)
         setShowContextMenu(true)
@@ -128,7 +128,7 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
     }
 
     const handleOnDoubleClickRequested = (e) => {
-        closeAllPanels()
+        // closeAllPanels()
         if (!edit) return null;
         setTextEditMode(true)
         setShowContextMenu(true)
@@ -202,19 +202,19 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
                                         onMouseMove={onMouseMoveContextMenu}
                                         title='Edit Text'
                                         onClick={handleOnDoubleClickRequested}
-                                        onPointerEnter={handleOnDoubleClickRequested}
+                                        onPointerEnter={isMobileScreenView ? handleOnDoubleClickRequested : ()=>false }
                                     ><BsPencilSquare onMouseMove={onMouseMoveContextMenu} /> </li>
                                     <li 
                                         onMouseMove={onMouseMoveContextMenu}
                                         onClick={handleShowElementSettingsRequest}
-                                        onPointerEnter={handleShowElementSettingsRequest}
+                                        onPointerEnter={isMobileScreenView ? handleShowElementSettingsRequest : ()=>false }
                                         title="Text Settings"
                                     ><BsFillGearFill onMouseMove={onMouseMoveContextMenu} /></li>
                                     <li 
                                         onMouseMove={onMouseMoveContextMenu}
                                         title="Delete Text"
                                         onClick={handleDeletePageElementRequest}
-                                        onPointerEnter={handleDeletePageElementRequest}
+                                        onPointerEnter={isMobileScreenView ? handleDeletePageElementRequest : ()=>false }
                                     ><BsFillTrash3Fill /></li>
                                     <li 
                                         onMouseMove={onMouseMoveContextMenu}
