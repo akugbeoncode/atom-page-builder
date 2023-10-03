@@ -339,7 +339,7 @@ body {
 }
 
 .design-orientation-panel-controls-container {
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   right: 10px;
   

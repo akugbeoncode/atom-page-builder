@@ -11,7 +11,7 @@ const PageManager = ({pages, activePage, setActivePage,  updatePageElementsCallb
     const [open, setOpen] = useState(false);
 
     useEffect(()=>{
-        isMobileScreenView ? setOpen(true) : setOpen(false)
+        isMobileScreenView ? setOpen(false) : setOpen(false)
     }, [isMobileScreenView])
     
     return (
