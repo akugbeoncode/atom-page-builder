@@ -147,6 +147,10 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
         } else {
             setThisIsActiveElement(false)
         }
+
+        if (activePageElement) {
+            console.log(activePageElement)
+        }
     }, [activePageElement])
 
     return (

@@ -68,14 +68,14 @@
       "type": "text",
       "text": "Edit Text",
       "settings": {
-        "font-size": 18,
-        "font-weight": 300,
+        "font-size": 34,
+        "font-weight": "900",
         "color": "#000000",
-        "font-family": "Mooli, sans-serif",
-        "x": 660,
-        "y": 472,
-        "width": 100,
-        "height": 50
+        "font-family": "Roboto, sans-serif",
+        "x": 451,
+        "y": 58,
+        "width": 472,
+        "height": 52
       },
       "id": 1
     }
