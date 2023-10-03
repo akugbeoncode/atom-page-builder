@@ -86,7 +86,7 @@ body {
   left: 0;
   top: calc(80vh/2);
 
-  z-index: 2040;
+  z-index: 8040;
 }
 
 .sidebar-panel-btn {
