@@ -78,6 +78,7 @@ const Project = () => {
         const projectFromServer = await fetchProjectByProps("slug", slug);
 
         if (!projectFromServer) {
+            localStorage.removeItem("ACTIVE_PAGE")
             if (!user) {
                 navigate("/", {replace: true})
             } else {
