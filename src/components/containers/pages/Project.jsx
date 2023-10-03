@@ -192,6 +192,9 @@ const Project = () => {
         const pageUpdate = activePage;
         pageUpdate.settings = pageSettingUpdate;
         await pageUpdated(pageUpdate.id, pageUpdate)
+        const stringifyPage = JSON.stringify(pageUpdate);
+        localStorage.setItem("ACTIVE_PAGE", stringifyPage)
+        setActivePage(pageUpdate)
     }
 
     useEffect(()=>{

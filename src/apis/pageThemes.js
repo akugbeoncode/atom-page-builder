@@ -2,6 +2,15 @@ import { capitalizeText } from "../helpers/utils";
 
 export const patterns = [
     {
+        id: 2,
+        name: "Upholstery",
+        className: "themes-upholstery",
+        parameters: {
+            "background": `radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 9%, hsla(0, 100%, 20%, 0) 9%) 0 0, radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 8%, hsla(0, 100%, 20%, 0) 10%) 50px 50px, radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 50px 0, radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 0 50px, radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 50px 0, radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 100px 50px, radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 0 0, radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 50px 50px, linear-gradient(45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0, linear-gradient(-45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0`,
+            "background-color": "#300",
+            "background-size": "100px 100px"
+        }
+    },{
         id: 4,
         name: "Cross Dots",
         className: "themes-cross-dots",
@@ -18,15 +27,6 @@ export const patterns = [
             "background": `linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424)`,
             "background-color": "#131313",
             "background-size": "20px 20px"
-        }
-    },{
-        id: 2,
-        name: "Upholstery",
-        className: "themes-upholstery",
-        parameters: {
-            "background": `radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 9%, hsla(0, 100%, 20%, 0) 9%) 0 0, radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 8%, hsla(0, 100%, 20%, 0) 10%) 50px 50px, radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 50px 0, radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 0 50px, radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 50px 0, radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 100px 50px, radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 0 0, radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 50px 50px, linear-gradient(45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0, linear-gradient(-45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0`,
-            "background-color": "#300",
-            "background-size": "100px 100px"
         }
     },{
         id: 3,
@@ -102,24 +102,30 @@ export const patterns = [
 export const getThemePatternByName = (themeName) => {
     let targetTheme = null;
 
+    console.log("0000000000000000                           00000000000000000000", themeName)
+
     patterns.forEach((pattern)=>{
         if (pattern.name === themeName) {
             targetTheme = pattern;
         }
     })
 
-    if (!targetTheme) {
-        targetTheme = patterns[0]
-    }
-
+    console.log("1111111111111111111111111111", targetTheme)
     return targetTheme
 }
 
 export const processThemePattern = (patternObject, type="Pattern") => {
+    if (patternObject) {
+        return {
+            type: type,
+            name: patternObject.name,
+            settings: generateThemeSettings(patternObject.parameters)
+        }
+    }
     return {
-        type: type,
-        name: patternObject.name,
-        settings: generateThemeSettings(patternObject.parameters)
+        type: "",
+        name: "",
+        settings: {}
     }
 }
 

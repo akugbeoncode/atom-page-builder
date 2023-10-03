@@ -894,6 +894,22 @@ body {
   z-index: 2048 !important;
 }
 
+.mobile-menu-btn {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.open {
+  color: #842029;
+  background-color: #f8d7da;
+}
+.close {
+  background-color: #FFF;
+  color: #000;
+}
+
 @media (max-width: 767px) {
   .sidebar-panel-btn {
     display: none;
@@ -919,7 +935,7 @@ body {
     width: 62px;
   }
   
-  .mobile-menu-btn {
+  /* .mobile-menu-btn {
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
@@ -933,7 +949,7 @@ body {
   .close {
     background-color: #FFF;
     color: #000;
-  }
+  } */
 
   .select-dropdown .select-dropdown-content {
     width: 100%;
