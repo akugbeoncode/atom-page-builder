@@ -70,7 +70,7 @@ const PageElementText = ({ element, edit, activePageElement, setActivePageElemen
                 const moveMouseActionLabel =  "move";
                 e.target.style.cursor = moveMouseActionLabel;
             }
-            handleOnClickRequested(e)
+            // handleOnClickRequested(e)
         } 
     }
 
