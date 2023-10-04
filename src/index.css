@@ -155,7 +155,7 @@ body {
   color: #FFF;
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   overflow-x: hidden;
   overflow-y: scroll;
