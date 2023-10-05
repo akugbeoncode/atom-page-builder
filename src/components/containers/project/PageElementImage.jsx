@@ -139,7 +139,7 @@ useEffect(() => {
                 <div 
                     className={`text-element-rendered-container ${(edit && thisIsActiveElement) ? "active focused" : "not-active" }`} 
                     style={{ 
-                      position: "relative", height: `100%`, width: `$100%`, cursor: "pointer"
+                      position: "relative", height: `${element.settings.height}px`, width: `${element.settings.width}px`, cursor: "pointer"
                     }}
                     onClick={(e) => handleOnClickRequested(e)}
                     onMouseMove={onMouseMove}
@@ -148,7 +148,7 @@ useEffect(() => {
                     <div 
                         onPointerEnter={(e) => handleOnClickRequested(e)}
                         style={{ 
-                      height: `100%`, width: `$100%`,
+                      height: `${element.settings.height}px`, width: `${element.settings.width}px`,
                       border: `${element.settings["border"]}`,
                       borderRadius: `${element.settings["border-radius"]}`,
                       overflow: "hidden",
@@ -157,7 +157,7 @@ useEffect(() => {
                       <img
                           src={element.url}
                           alt='Element'
-                          style={{ height: `100%`, width: `$100%`, cursor: "pointer" }}
+                          style={{ height: `100%`, width: `100%`, cursor: "pointer" }}
                       />
                     </div>
 

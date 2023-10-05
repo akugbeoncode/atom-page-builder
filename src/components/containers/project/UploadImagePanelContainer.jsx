@@ -60,8 +60,36 @@ const UploadImagePanelContainer = ({ closeAllPanels, page, updatePageElementsCal
 			settings: getUiElementDefaultSettings(type)
 		}
 
-		imageUIElement.settings.height = data.height
-		imageUIElement.settings.width = data.width
+		// imageUIElement.settings.height = data.height
+		// imageUIElement.settings.width = data.widthimageUIElement.settings.height = data.height
+		// imageUIElement.settings.width = data.width
+
+		const aspectRatio = data.width/data.height;
+
+		let imgHeight = 0;
+		let imgWidth = 0;
+
+		if ((data.width > 200) && (data.height > 200)) {
+			if (data.width > data.height) {
+				imgWidth = 200;
+				imgHeight = parseInt(200 * aspectRatio, 10)
+			} else {
+				imgHeight = 200;
+				imgWidth = parseInt(200 * aspectRatio, 10)
+			}
+		} else if ((data.width > 200) && (data.height < 200)) {
+			imgWidth = 200;
+			imgHeight = parseInt(200 * aspectRatio, 10)
+		} else if ((data.width < 200) && (data.height > 200)) {
+			imgHeight = 200;
+			imgWidth = parseInt(200 * aspectRatio, 10)
+		} else {
+			imgHeight = data.height
+			imgWidth = data.width;
+		}
+
+		imageUIElement.settings.height = imgHeight;
+		imageUIElement.settings.width = imgWidth;
 
 		await createPageElement(imageUIElement)
 		setLoading(false)
@@ -76,7 +104,7 @@ const UploadImagePanelContainer = ({ closeAllPanels, page, updatePageElementsCal
 				<h3 className='h5 container-title'>Upload Image</h3>
 				<p className='upload-instruction'>Only .png, .jpg, .gif allowed. Max 5 MB. You can also drag and drop.</p>
 				<div className="mb-3 text-center">
-					<img src={imgUrl ? imgUrl : placeholderImage} alt="sample" className='placeholder-img' style={{ height: "150px", width: "200px", margin: "0 30px" }} />
+					<img src={imgUrl ? imgUrl : placeholderImage} alt="sample" className='placeholder-img' style={{ height: "100px", margin: "0 30px" }} />
 				</div>
 				<div className="mb-3">
 					<input id="file-upload" className="form-control" accept="image/*" type="file" onChange={(e)=>uploadImage(e)} hidden />

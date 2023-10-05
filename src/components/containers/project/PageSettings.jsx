@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { FaCogs } from "react-icons/fa";
 import { getThemePatternByName, patterns, processThemePattern } from '../../../apis/pageThemes';
 
 const PageSettings = ({ open, setOpen, closeAllPanels, page, updateActivePageSettings }) => {
 
   const initPatternTheme = page?.settings.usePattern ? getThemePatternByName(page?.settings.theme.name) : {name: "Solid Color", className: "", parameters: {"background": page?.settings.color}};
-  const [color, setColor] = useState(page.settings.color);
-  const [usePattern, setUsePattern] = useState(page.settings.usePattern);
+  const [color, setColor] = useState(page?.settings.color);
+  const [usePattern, setUsePattern] = useState(page?.settings.usePattern);
   const [patternTheme, setPatternTheme] = useState(JSON.stringify(initPatternTheme));
   const [patternThemesOptions, setPatternThemesOptions] = useState(patterns);
   const [patterToStyle, setPatterToStyle] = useState(processThemePattern(JSON.parse(patternTheme), page?.settings.usePattern ? "Pattern" : "Solid Color"));

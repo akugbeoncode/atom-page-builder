@@ -33,10 +33,10 @@
   ],
   "projects": [
     {
-      "title": "dataa",
-      "slug": "dataa",
+      "title": "page one",
+      "slug": "page-one",
       "description": "",
-      "reference": "2ecf930a-1535-4c90-8eb9-76a032441aab",
+      "reference": "b43cc592-6344-4822-abe8-f2d8d95010f7",
       "owner": "9c52ce3c-70e7-4857-bef9-c4c452b48ab8",
       "publish": false,
       "id": 1
@@ -44,8 +44,8 @@
   ],
   "pages": [
     {
-      "project": "2ecf930a-1535-4c90-8eb9-76a032441aab",
-      "reference": "2b1329e4-3fe5-476a-9992-161538abd69f",
+      "project": "b43cc592-6344-4822-abe8-f2d8d95010f7",
+      "reference": "191a35ca-3444-4d54-accd-b717d35a2750",
       "name": "main",
       "settings": {
         "theme": {
@@ -59,25 +59,24 @@
         "color": "#FFFFFF"
       },
       "id": 1
+    },
+    {
+      "project": "b43cc592-6344-4822-abe8-f2d8d95010f7",
+      "reference": "1d0744a4-fe6c-4011-967b-7ff89c7767fe",
+      "name": "main",
+      "settings": {
+        "theme": {
+          "type": "Solid Color",
+          "name": "White Background",
+          "settings": {
+            "background": "#FFFFFF"
+          }
+        },
+        "usePattern": false,
+        "color": "#FFFFFF"
+      },
+      "id": 2
     }
   ],
-  "pageElements": [
-    {
-      "reference": "1ba250e0-4746-4eee-aee9-50cfc2bfeb4c",
-      "page": "0f7e08aa-39b3-4dcb-9d30-4d7248ffd8c1",
-      "type": "text",
-      "text": "Edit Text",
-      "settings": {
-        "font-size": 34,
-        "font-weight": "900",
-        "color": "#000000",
-        "font-family": "Roboto, sans-serif",
-        "x": 451,
-        "y": 58,
-        "width": 472,
-        "height": 52
-      },
-      "id": 1
-    }
-  ]
+  "pageElements": []
 }
